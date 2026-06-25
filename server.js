@@ -43,7 +43,10 @@ class BaseServer extends events_1.EventEmitter {
             httpCompression: {
                 threshold: 1024,
             },
-            cors: false,
+            cors: {
+                origin: "*",
+                methods: ["GET", "POST"],
+            },
             allowEIO3: false,
         }, opts);
         if (opts.cookie) {
